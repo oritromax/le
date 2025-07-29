@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Test on file change",
+			"command": "find . -name '*.go' | entr -c go test ./server",
+			"group": "test",
+			"isBackground": false,
+			"problemMatcher": [
+				"$go"
+			]
+		}
+	]
+}
