@@ -23,13 +23,12 @@ func NewServer(dir string, port int) *Server {
 }
 
 func (s *Server) Start() error {
-	fs := http.FileServer(http.Dir(s.Dir))
-	http.Handle("/", fs)
+	handler := newHandler(s.Dir)
 
 	s.PrintUrl()
 
 	addr := fmt.Sprintf(":%d", s.Port)
-	err := http.ListenAndServe(addr, nil)
+	err := http.ListenAndServe(addr, handler)
 
 	if err != nil {
 		return fmt.Errorf("error starting server: %w", err)
@@ -46,6 +45,7 @@ func (s *Server) PrintUrl() {
 	}
 
 	url := fmt.Sprintf("http://%s:%d", localIP, s.Port)
+	log.Printf("Serving files from: %s", s.Dir)
 	log.Printf("File server is running on  %s", url)
 
 	qrc, err := qrcode.New(url)
