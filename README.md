@@ -1,5 +1,8 @@
 # le
-`le` is a simple file server written in Go with resume support, local address QR code, download logs with progress.
+`le` is a simple file server written in Go with
+* resume support
+* local address QR code
+* download logs with progress
 
 ## Usage
 
