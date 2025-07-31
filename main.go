@@ -4,7 +4,7 @@ import (
 	"flag"
 	"log"
 
-	"github.com/sjsakib/gudam/server"
+	"go.sakib.dev/le/server"
 )
 
 

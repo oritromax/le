@@ -1,4 +1,4 @@
-module github.com/sjsakib/gudam
+module go.sakib.dev/le
 
 go 1.23.6
 

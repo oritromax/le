@@ -10,8 +10,8 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/sjsakib/gudam/pkg/utils"
-	"github.com/sjsakib/gudam/pkg/nanoid"
+	"go.sakib.dev/le/pkg/utils"
+	"go.sakib.dev/le/pkg/nanoid"
 )
 
 type fileHandler struct {

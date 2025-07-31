@@ -7,7 +7,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/sjsakib/gudam/pkg/utils"
+	"go.sakib.dev/le/pkg/utils"
 
 	"github.com/mdp/qrterminal/v3"
 )
