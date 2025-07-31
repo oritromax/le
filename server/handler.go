@@ -106,8 +106,17 @@ func (h fileHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if info.IsDir() {
-		log.Printf("Using default file server for %s | %s - %s", connID, clientIP, r.URL.Path)
-		h.defaultServer.ServeHTTP(w, r)
+		// check if request is coming from a browser
+		acceptHeader := r.Header.Get("Accept")
+		isBrowser := strings.Contains(acceptHeader, "text/html")
+
+		if isBrowser {
+			log.Printf("[200] %s | %s - serving directory listing for %s", connID, clientIP, r.URL.Path)
+			h.serveDirectory(w, r, absPath)
+		} else {
+			log.Printf("Using default file server for %s | %s - %s", connID, clientIP, r.URL.Path)
+			h.defaultServer.ServeHTTP(w, r)
+		}
 		return
 	}
 
