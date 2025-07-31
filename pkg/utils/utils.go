@@ -27,8 +27,6 @@ func ParseRangeHeader(header string, size int64) (start, end int64, err error) {
 
 	matches := re.FindStringSubmatch(header)
 
-	fmt.Printf("Matches: %v | header: %q\n", matches, header)
-
 	errMsg := fmt.Errorf("invalid range header: %q for size %d", header, size)
 
 	if len(matches) < 3 || (matches[1] == "" && matches[2] == "") {

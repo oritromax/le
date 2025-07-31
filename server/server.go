@@ -2,12 +2,14 @@ package server
 
 import (
 	"fmt"
+	"os"
+
 	"log"
 	"net/http"
 
-	"github.com/sjsakib/gudam/utils"
-	"github.com/yeqown/go-qrcode/v2"
-	"github.com/yeqown/go-qrcode/writer/terminal"
+	"github.com/sjsakib/gudam/pkg/utils"
+
+	"github.com/mdp/qrterminal/v3"
 )
 
 type Server struct {
@@ -48,16 +50,13 @@ func (s *Server) PrintUrl() {
 	log.Printf("Serving files from: %s", s.Dir)
 	log.Printf("File server is running on  %s", url)
 
-	qrc, err := qrcode.New(url)
-
-	if err != nil {
-		log.Printf("error generating QR code: %s", err)
-		return
+	qrConfig := qrterminal.Config{
+		HalfBlocks: true,
+		Level:      qrterminal.M,
+		Writer:     os.Stdout,
 	}
 
-	w := terminal.New()
-	if err := qrc.Save(w); err != nil {
-		log.Printf("error writing QR code to terminal: %s", err)
-		return
-	}
+	qrterminal.GenerateWithConfig(url, qrConfig)
+
+	fmt.Println("")
 }
