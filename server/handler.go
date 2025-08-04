@@ -18,6 +18,8 @@ import (
 	"go.sakib.dev/le/pkg/utils"
 )
 
+const downloadProgressLogInterval = 500 * time.Millisecond // Log download progress every 500 milliseconds
+
 type handler struct {
 	defaultServer http.Handler
 	root          http.Dir
@@ -105,9 +107,9 @@ func (h handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	var totalSent int64 = 0
 	var totalMBSent float64
 	buf := make([]byte, 1024*1024) // 1MB buffer
+	var lastReportedSent int64 = 0
+	var lastReportedTime = time.Now()
 	for {
-		bufferStart := time.Now()
-
 		n, readErr := reader.Read(buf)
 		if readErr != nil {
 			if readErr != io.EOF {
@@ -123,10 +125,23 @@ func (h handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 				break
 			}
 			totalSent += int64(n)
-			totalMBSent = float64(totalSent) / 1024 / 1024
-			mbps := 1 / time.Since(bufferStart).Seconds()
-			progress := float64(totalSent) / float64(info.Size()) * 100
-			slog.InfoContext(reqHelper.ctx, "XFER", "sent_mb", totalMBSent, "speed_mbps", mbps, "progress", progress, "file", fileName)
+
+			if time.Since(lastReportedTime) > downloadProgressLogInterval {
+				totalMBSent = float64(totalSent) / 1024 / 1024
+
+				mbps := float64(totalSent-lastReportedSent) / 1024 / 1024 / time.Since(lastReportedTime).Seconds()
+
+				progress := float64(totalSent) / float64(info.Size()) * 100
+
+				msg := fmt.Sprintf("%7.2f / %7.2f MB sent | %2.2f%% | %5.2f MB/s",
+					totalMBSent, float64(contentLength)/1024/1024, progress, mbps)
+
+				slog.InfoContext(reqHelper.ctx, msg, "file", fileName)
+
+				lastReportedSent = totalSent
+				lastReportedTime = time.Now()
+			}
+
 		}
 	}
 
