@@ -1,9 +1,11 @@
 package server
 
 import (
+	"context"
+	"errors"
 	"fmt"
 	"io"
-	"log"
+	"log/slog"
 	"net"
 	"net/http"
 	"os"
@@ -11,97 +13,52 @@ import (
 	"strings"
 	"time"
 
+	"go.sakib.dev/le/logger"
 	"go.sakib.dev/le/pkg/nanoid"
 	"go.sakib.dev/le/pkg/utils"
 )
 
-type fileHandler struct {
+type handler struct {
 	defaultServer http.Handler
 	root          http.Dir
 }
 
 func newHandler(dir string) http.Handler {
-	return &fileHandler{
+	return &handler{
 		defaultServer: http.FileServer(http.Dir(dir)),
 		root:          http.Dir(dir),
 	}
 }
 
-func (h fileHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	connID := nanoid.New()
-	clientIP, _, _ := net.SplitHostPort(r.RemoteAddr)
+func (h handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	reqHelper := newReqHelper(w, r)
 
-	log.Printf("[REQUEST] %s | %s - %s", connID, clientIP, r.URL.Path)
+	reqHelper.attachReqId()
+
+	reqHelper.logRequest()
 
 	if r.Method != http.MethodGet {
-		http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
-		log.Printf("[405] %s | %s - %s", connID, clientIP, r.URL.Path)
+		reqHelper.error("Method Not Allowed", nil, http.StatusMethodNotAllowed)
 		return
 	}
 
-	// get root path
-	absRoot, err := filepath.Abs(string(h.root))
-	if err != nil {
-		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
-		log.Printf("[500] %s | %s - error resolving root path: %v", connID, clientIP, err)
+	absPath, err := utils.SecureJoin(string(h.root), r.URL.Path)
+
+	if errors.Is(err, utils.ErrForbiddenPath) {
+		reqHelper.error("FORBIDDEN", err, http.StatusForbidden)
 		return
-	}
-
-	// because macOS is a special snowflake
-	absRoot, err = filepath.EvalSymlinks(absRoot)
-	if err != nil {
-		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
-		log.Printf("[500] %s | %s - error resolving root symlinks: %v", connID, clientIP, err)
-		return
-	}
-
-	requestedPath := filepath.Join(string(h.root), r.URL.Path)
-
-	// absolute path of the requested file
-	absPath, err := filepath.Abs(requestedPath)
-	if err != nil {
-		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
-		log.Printf("[500] %s | %s - error resolving file path: %v", connID, clientIP, err)
-		return
-	}
-
-	absPath, err = filepath.EvalSymlinks(absPath)
-	if err != nil && !os.IsNotExist(err) {
-		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
-		log.Printf("[500] %s | %s - error evaluating symlinks: %v", connID, clientIP, err)
-		return
-	}
-
-	// clean and compare
-	absRoot = filepath.Clean(absRoot)
-	if err == nil {
-		absPath = filepath.Clean(absPath)
-	}
-
-	if err != nil && os.IsNotExist(err) {
-		parentPath := filepath.Dir(absPath)
-		evalParent, err := filepath.EvalSymlinks(parentPath)
-		if err == nil {
-			absPath = filepath.Join(evalParent, filepath.Base(absPath))
-		}
-	}
-
-	// prevent prefix matching for path traversal
-	if !strings.HasPrefix(absPath, absRoot+string(filepath.Separator)) && absPath != absRoot {
-		http.Error(w, "Forbidden", http.StatusForbidden)
-		log.Printf("[403] %s | %s - path traversal attempt: %s", connID, clientIP, r.URL.Path)
+	} else if err != nil {
+		reqHelper.internalServerError(err)
 		return
 	}
 
 	info, err := os.Stat(absPath)
 	if err != nil {
 		if os.IsNotExist(err) {
-			http.NotFound(w, r)
-			log.Printf("[404] %s | %s - %s", connID, clientIP, r.URL.Path)
+			reqHelper.error("NOT FOUND", err, http.StatusNotFound)
 			return
 		}
-		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
-		log.Printf("[500] %s | %s - error stating %s: %v", connID, clientIP, r.URL.Path, err)
+		reqHelper.internalServerError(err)
 		return
 	}
 
@@ -111,10 +68,10 @@ func (h fileHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		isBrowser := strings.Contains(acceptHeader, "text/html")
 
 		if isBrowser {
-			log.Printf("[200] %s | %s - serving directory listing for %s", connID, clientIP, r.URL.Path)
+			slog.InfoContext(reqHelper.ctx, "OK - Serving directory with pretty UI", "path", r.URL.Path)
 			h.serveDirectory(w, r, absPath)
 		} else {
-			log.Printf("Using default file server for %s | %s - %s", connID, clientIP, r.URL.Path)
+			slog.InfoContext(reqHelper.ctx, "OK - Serving directory default file server", "path", r.URL.Path)
 			h.defaultServer.ServeHTTP(w, r)
 		}
 		return
@@ -122,42 +79,21 @@ func (h fileHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	file, err := os.Open(absPath)
 	if err != nil {
-		http.Error(w, "Internal Server Error", 500)
-		log.Printf("[500] %s | %s - error opening %s: %v", connID, clientIP, r.URL.Path, err)
+		reqHelper.internalServerError(err)
 		return
 	}
 	defer file.Close()
-
-	var reader io.Reader = file
-	var contentLength int64 = info.Size()
-	var startByte int64 = 0
-	var endByte int64 = 0
 	var transferStart = time.Now()
 
-	rng := r.Header.Get("Range")
-	if rng != "" {
-		startByte, endByte, err = utils.ParseRangeHeader(rng, info.Size())
-		if err != nil {
-			http.Error(w, "Invalid Range", http.StatusRequestedRangeNotSatisfiable)
-			log.Printf("[416] %s | %s - invalid range %s for %s: %v", connID, clientIP, rng, r.URL.Path, err)
+	contentLength, reader, err := reqHelper.handleRange(file, info)
+	if err != nil {
+		if errors.Is(err, ErrInvalidRangeHeader) {
+			reqHelper.error("Invalid Range", err, http.StatusRequestedRangeNotSatisfiable)
 			return
 		}
+		reqHelper.internalServerError(err)
+		return
 
-		if _, err := file.Seek(startByte, io.SeekStart); err != nil {
-			http.Error(w, "Internal Server Error", http.StatusInternalServerError)
-			log.Printf("[500] %s | %s - error seeking %s: %v", connID, clientIP, r.URL.Path, err)
-			return
-		}
-
-		contentLength = endByte - startByte + 1
-		reader = io.LimitReader(file, contentLength)
-
-		w.Header().Set("Content-Range", fmt.Sprintf("bytes %d-%d/%d", startByte, endByte, info.Size()))
-		w.WriteHeader(http.StatusPartialContent)
-
-		log.Printf("[206] %s - %s range %d-%d", clientIP, r.URL.Path, startByte, endByte)
-	} else {
-		log.Printf("[200] %s - %s (%d bytes)", clientIP, r.URL.Path, info.Size())
 	}
 
 	w.Header().Set("Content-Type", "application/octet-stream")
@@ -175,7 +111,7 @@ func (h fileHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		n, readErr := reader.Read(buf)
 		if readErr != nil {
 			if readErr != io.EOF {
-				log.Printf("[XFER ERROR] %s | %s - %s: %v", connID, clientIP, fileName, readErr)
+				slog.ErrorContext(reqHelper.ctx, "Error reading file", "error", readErr, "file", fileName)
 			}
 			break
 		}
@@ -183,16 +119,86 @@ func (h fileHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		if n > 0 {
 			_, writeErr := w.Write(buf[:n])
 			if writeErr != nil {
-				log.Printf("[XFER INTERRUPTED] %s | %s | %s after %.2fMB", connID, clientIP, fileName, totalMBSent)
+				slog.ErrorContext(reqHelper.ctx, "Error writing response", "error", writeErr, "file", fileName)
 				break
 			}
 			totalSent += int64(n)
 			totalMBSent = float64(totalSent) / 1024 / 1024
 			mbps := 1 / time.Since(bufferStart).Seconds()
 			progress := float64(totalSent) / float64(info.Size()) * 100
-			log.Printf("[XFER] %s | %s - %s: %.2fMB sent, %.2fMB/s, %.2f%%", connID, clientIP, fileName, totalMBSent, mbps, progress)
+			slog.InfoContext(reqHelper.ctx, "XFER", "sent_mb", totalMBSent, "speed_mbps", mbps, "progress", progress, "file", fileName)
 		}
 	}
 
-	log.Printf("[DONE] %s | %s - %s: %.2fMB in %s", connID, clientIP, fileName, totalMBSent, time.Since(transferStart))
+	slog.InfoContext(reqHelper.ctx, "TRANSFER COMPLETE", "file", fileName, "totalSent_mb", totalMBSent, "duration", time.Since(transferStart))
+}
+
+type reqHelper struct {
+	w   http.ResponseWriter
+	r   *http.Request
+	ctx context.Context
+}
+
+func newReqHelper(w http.ResponseWriter, r *http.Request) *reqHelper {
+	return &reqHelper{
+		w:   w,
+		r:   r,
+		ctx: r.Context(),
+	}
+}
+
+func (h *reqHelper) attachReqId() *context.Context {
+	reqId := nanoid.New()
+	ctx := context.WithValue(h.ctx, utils.RequestIDKey, reqId)
+	h.r = h.r.WithContext(ctx)
+	h.ctx = ctx
+	return &ctx
+}
+
+func (h reqHelper) logRequest() {
+	clientIP, _, _ := net.SplitHostPort(h.r.RemoteAddr)
+	slog.InfoContext(h.ctx, "REQUEST",
+		"clientIP", clientIP,
+		"method", h.r.Method,
+		"path", h.r.URL.Path)
+
+}
+
+var ErrInvalidRangeHeader = errors.New("invalid range header")
+
+func (h *reqHelper) handleRange(file *os.File, fileInfo os.FileInfo) (int64, io.Reader, error) {
+	rng := h.r.Header.Get("Range")
+	var contentLength = fileInfo.Size()
+	var reader io.Reader = file
+	if rng != "" {
+		startByte, endByte, err := utils.ParseRangeHeader(rng, fileInfo.Size())
+		if err != nil {
+			return 0, nil, ErrInvalidRangeHeader
+		}
+
+		if _, err := file.Seek(startByte, io.SeekStart); err != nil {
+			return 0, nil, err
+		}
+
+		contentLength = endByte - startByte + 1
+		reader = io.LimitReader(file, contentLength)
+
+		h.w.Header().Set("Content-Range", fmt.Sprintf("bytes %d-%d/%d", startByte, endByte, fileInfo.Size()))
+		h.w.WriteHeader(http.StatusPartialContent)
+
+		slog.InfoContext(h.ctx, "PARTIAL", "path", h.r.URL.Path, "start", startByte, "end", endByte, "total", contentLength, logger.StatusCodeKey, http.StatusPartialContent)
+	} else {
+		slog.InfoContext(h.ctx, "OK", "path", h.r.URL.Path, "size", contentLength, logger.StatusCodeKey, http.StatusOK)
+	}
+
+	return contentLength, reader, nil
+}
+
+func (h *reqHelper) internalServerError(err error) {
+	h.error("Internal Server Error", err, http.StatusInternalServerError)
+}
+
+func (h *reqHelper) error(mgs string, err error, statusCode int) {
+	http.Error(h.w, mgs, statusCode)
+	slog.ErrorContext(h.ctx, "", logger.StatusCodeKey, statusCode, "error", err)
 }

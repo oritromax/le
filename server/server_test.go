@@ -7,7 +7,7 @@ import (
 )
 
 func TestServer_Start(t *testing.T) {
-	dir := "../utils" // Use utils dir for test files
+	dir := "../pkg/utils" // Use utils dir for test files
 	port := 8081
 	s := NewServer(dir, port)
 
@@ -26,7 +26,7 @@ func TestServer_Start(t *testing.T) {
 }
 
 func TestServer_PartialDownload(t *testing.T) {
-	dir := "../utils" // Use utils dir for test files
+	dir := "../pkg/utils" // Use utils dir for test files
 	port := 8082
 	s := NewServer(dir, port)
 

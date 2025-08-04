@@ -4,9 +4,10 @@ import (
 	"fmt"
 	"os"
 
-	"log"
+	"log/slog"
 	"net/http"
 
+	"go.sakib.dev/le/logger"
 	"go.sakib.dev/le/pkg/utils"
 
 	"github.com/mdp/qrterminal/v3"
@@ -18,6 +19,8 @@ type Server struct {
 }
 
 func NewServer(dir string, port int) *Server {
+	slog.SetDefault(slog.New(logger.NewHandler()))
+
 	return &Server{
 		Dir:  dir,
 		Port: port,
@@ -42,13 +45,13 @@ func (s *Server) Start() error {
 func (s *Server) PrintUrl() {
 	localIP, err := utils.GetLocalIP()
 	if err != nil {
-		log.Printf("error getting local IP: %s", err)
+		slog.Error("Error getting local IP", "error", err)
 		localIP = "localhost"
 	}
 
 	url := fmt.Sprintf("http://%s:%d", localIP, s.Port)
-	log.Printf("Serving files from: %s", s.Dir)
-	log.Printf("File server is running on  %s", url)
+	slog.Info("Serving files from", "directory", s.Dir)
+	slog.Info("File server is running on", "url", url)
 
 	qrConfig := qrterminal.Config{
 		HalfBlocks: true,

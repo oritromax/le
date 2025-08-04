@@ -1,10 +1,20 @@
 package utils
 
 import (
+	"errors"
 	"fmt"
 	"net"
+	"os"
+	"path/filepath"
 	"regexp"
 	"strconv"
+	"strings"
+)
+
+type ContextKey string
+
+const (
+	RequestIDKey ContextKey = "reqId"
 )
 
 func GetLocalIP() (string, error) {
@@ -55,4 +65,51 @@ func ParseRangeHeader(header string, size int64) (start, end int64, err error) {
 	}
 
 	return start, end, nil
+}
+
+var ErrForbiddenPath = errors.New("forbidden path")
+
+// SecureJoin ensures that the joined path is within the base directory
+func SecureJoin(base, path string) (string, error) {
+	// get root path
+	absRoot, err := filepath.Abs(base)
+	if err != nil {
+		return "", err
+	}
+
+	// because macOS is a special snowflake
+	absRoot, err = filepath.EvalSymlinks(absRoot)
+	if err != nil {
+		return "", err
+	}
+	absRoot = filepath.Clean(absRoot)
+
+	targetPath := filepath.Join(absRoot, path)
+
+	absPath, err := filepath.Abs(targetPath)
+	if err != nil {
+		return "", err
+	}
+
+	parentPath := filepath.Dir(absPath)
+	fileName := filepath.Base(absPath)
+
+	absPath, err = filepath.EvalSymlinks(absPath)
+	if err != nil && os.IsNotExist(err) {
+		evalParent, err := filepath.EvalSymlinks(parentPath)
+		if err == nil {
+			absPath = filepath.Join(evalParent, fileName)
+		}
+	} else if err != nil {
+		return "", err
+	}
+
+	absPath = filepath.Clean(absPath)
+
+	// prevent prefix matching for path traversal
+	if !strings.HasPrefix(absPath, absRoot+(string(filepath.Separator))) && absPath != absRoot {
+		return "", ErrForbiddenPath
+	}
+
+	return absPath, nil
 }

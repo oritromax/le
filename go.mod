@@ -2,7 +2,10 @@ module go.sakib.dev/le
 
 go 1.23.6
 
-require github.com/mdp/qrterminal/v3 v3.2.1
+require (
+	github.com/lmittmann/tint v1.1.2
+	github.com/mdp/qrterminal/v3 v3.2.1
+)
 
 require (
 	golang.org/x/sys v0.29.0 // indirect

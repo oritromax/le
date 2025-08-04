@@ -164,7 +164,7 @@ func formatTime(t time.Time) string {
 	return t.Format("Jan 2, 2006")
 }
 
-func (h *fileHandler) serveDirectory(w http.ResponseWriter, r *http.Request, dirPath string) {
+func (h *handler) serveDirectory(w http.ResponseWriter, r *http.Request, dirPath string) {
 	files, err := os.ReadDir(dirPath)
 	if err != nil {
 		http.Error(w, "Error reading directory", http.StatusInternalServerError)

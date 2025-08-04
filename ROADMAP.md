@@ -11,3 +11,7 @@ A file server with primary purpose of serving and downloading files in the local
 
 ## V2
 - [ ] Show the progress and logs with nice UI with something like bubbletea
+
+
+## Ideas
+* [ ] Generate and show device name based on user agent.
