@@ -59,7 +59,15 @@ func (m model) View() string {
 	})
 
 	connCount := len(state.Conns)
-	return fmt.Sprintf("Server running at: %s\nNumber of connections: %d\n%s\nPress Ctrl+C or 'q' to quit.\n", *state.Addr, connCount, stringWriter.String())
+	str := fmt.Sprintf("Server running at: %s\nNumber of connections: %d\n", *state.Addr, connCount)
+
+	str += fmt.Sprintf("From directory %s\n", state.Dir)
+
+	str += stringWriter.String()
+
+	str += "\nPress Ctrl+C or 'q' to quit.\n\n"
+
+	return str
 }
 
 func Start(srvr *server.Server, ch <-chan server.ServerEventName) error {

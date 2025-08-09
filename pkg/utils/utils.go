@@ -142,3 +142,33 @@ func SecureJoin(base, path string) (string, error) {
 
 	return absPath, nil
 }
+
+func CleanDirectory(path string) (string, error) {
+	path, err := filepath.Abs(path)
+
+	if err != nil {
+		return "", err
+	}
+
+	path = filepath.Clean(path)
+
+	info, err := os.Stat(path)
+
+	if err != nil {
+		if os.IsNotExist(err) {
+			return "", fmt.Errorf("directory does not exist: %s", path)
+		}
+		return "", err
+	}
+
+	if !info.IsDir() {
+		return "", fmt.Errorf("path is not a directory: %s", path)
+	}
+
+	// replace home directory
+	if home := os.Getenv("HOME"); home != "" {
+		path = strings.ReplaceAll(path, home, "~")
+	}
+
+	return path, nil
+}

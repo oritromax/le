@@ -21,6 +21,7 @@ type Conn struct {
 }
 
 type ServerState struct {
+	Dir   string
 	Addr  *string
 	Conns map[string]*Conn
 }

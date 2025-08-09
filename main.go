@@ -15,7 +15,11 @@ func main() {
 	flag.Parse()
 
 	eventCh := make(chan server.ServerEventName, 10)
-	srvr := server.NewServer(*dir, *port, eventCh)
+	srvr, err := server.NewServer(*dir, *port, eventCh)
+
+	if err != nil {
+		log.Fatalf("Failed to start server: %v", err)
+	}
 
 	go func() {
 		if err := srvr.Start(); err != nil {
@@ -23,7 +27,7 @@ func main() {
 		}
 	}()
 
-	err := tui.Start(srvr, eventCh)
+	err = tui.Start(srvr, eventCh)
 	if err != nil {
 		log.Fatalf("Failed to start TUI: %v", err)
 	}

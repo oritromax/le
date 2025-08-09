@@ -18,7 +18,12 @@ type Server struct {
 	eventCh chan ServerEventName
 }
 
-func NewServer(dir string, port int, ch chan ServerEventName) *Server {
+func NewServer(dir string, port int, ch chan ServerEventName) (*Server, error) {
+	dir, err := utils.CleanDirectory(dir)
+	if err != nil {
+		return nil, fmt.Errorf("invalid directory: %w", err)
+	}
+
 	slog.SetDefault(slog.New(logger.NewHandler()))
 
 	return &Server{
@@ -26,9 +31,10 @@ func NewServer(dir string, port int, ch chan ServerEventName) *Server {
 		Port:    port,
 		eventCh: ch,
 		state: ServerState{
+			Dir:   dir,
 			Conns: make(map[string]*Conn),
 		},
-	}
+	}, nil
 }
 
 func (s *Server) Start() error {
