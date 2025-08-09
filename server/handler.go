@@ -67,6 +67,8 @@ func (h handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	absPath, err := utils.SecureJoin(string(h.root), r.URL.Path)
 
+	slog.Debug("Secure Join", "path", absPath, "root", string(h.root), "path", r.URL.Path, "error", err)
+
 	if errors.Is(err, utils.ErrForbiddenPath) {
 		reqHelper.error("FORBIDDEN", err, http.StatusForbidden)
 		return

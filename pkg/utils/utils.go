@@ -100,20 +100,7 @@ var ErrForbiddenPath = errors.New("forbidden path")
 
 // SecureJoin ensures that the joined path is within the base directory
 func SecureJoin(base, path string) (string, error) {
-	// get root path
-	absRoot, err := filepath.Abs(base)
-	if err != nil {
-		return "", err
-	}
-
-	// because macOS is a special snowflake
-	absRoot, err = filepath.EvalSymlinks(absRoot)
-	if err != nil {
-		return "", err
-	}
-	absRoot = filepath.Clean(absRoot)
-
-	targetPath := filepath.Join(absRoot, path)
+	targetPath := filepath.Join(base, path)
 
 	absPath, err := filepath.Abs(targetPath)
 	if err != nil {
@@ -136,20 +123,25 @@ func SecureJoin(base, path string) (string, error) {
 	absPath = filepath.Clean(absPath)
 
 	// prevent prefix matching for path traversal
-	if !strings.HasPrefix(absPath, absRoot+(string(filepath.Separator))) && absPath != absRoot {
+	if !strings.HasPrefix(absPath, base+(string(filepath.Separator))) && absPath != base {
 		return "", ErrForbiddenPath
 	}
 
 	return absPath, nil
 }
 
-func CleanDirectory(path string) (string, error) {
+func ValidAbsDir(path string) (string, error) {
 	path, err := filepath.Abs(path)
 
 	if err != nil {
 		return "", err
 	}
 
+	path, err = filepath.EvalSymlinks(path)
+
+	if err != nil {
+		return "", err
+	}
 	path = filepath.Clean(path)
 
 	info, err := os.Stat(path)
@@ -165,10 +157,13 @@ func CleanDirectory(path string) (string, error) {
 		return "", fmt.Errorf("path is not a directory: %s", path)
 	}
 
-	// replace home directory
-	if home := os.Getenv("HOME"); home != "" {
-		path = strings.ReplaceAll(path, home, "~")
-	}
-
 	return path, nil
+}
+
+// ReplaceHome replaces the home directory in the given path with a tilde (~).
+func ReplaceHome(dir string) string {
+	if home := os.Getenv("HOME"); home != "" {
+		dir = strings.ReplaceAll(dir, home, "~")
+	}
+	return dir
 }

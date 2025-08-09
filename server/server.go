@@ -19,19 +19,21 @@ type Server struct {
 }
 
 func NewServer(dir string, port int, ch chan ServerEventName) (*Server, error) {
-	dir, err := utils.CleanDirectory(dir)
+	dir, err := utils.ValidAbsDir(dir)
 	if err != nil {
 		return nil, fmt.Errorf("invalid directory: %w", err)
 	}
 
 	slog.SetDefault(slog.New(logger.NewHandler()))
 
+	slog.Info("Got directory:", "dir", dir)
+
 	return &Server{
 		Dir:     dir,
 		Port:    port,
 		eventCh: ch,
 		state: ServerState{
-			Dir:   dir,
+			Dir:   utils.ReplaceHome(dir),
 			Conns: make(map[string]*Conn),
 		},
 	}, nil
