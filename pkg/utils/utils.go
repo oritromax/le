@@ -3,7 +3,9 @@ package utils
 import (
 	"errors"
 	"fmt"
+	"log/slog"
 	"net"
+	"net/http"
 	"os"
 	"path/filepath"
 	"regexp"
@@ -27,6 +29,33 @@ func GetLocalIP() (string, error) {
 
 	localAddr := conn.LocalAddr().(*net.UDPAddr)
 	return localAddr.IP.String(), nil
+}
+
+// GetClientIP does not consider reverse proxies or load balancers
+func GetClientIP(r *http.Request) (string, error) {
+	slog.Debug("Getting client IP", "remoteAddr", r.RemoteAddr)
+	ip, _, err := net.SplitHostPort(r.RemoteAddr)
+	if err != nil {
+		return "", err
+	}
+	return ip, nil
+}
+
+func GetClientHostname(r *http.Request) (string, error) {
+	ip, err := GetClientIP(r)
+
+	if err != nil {
+		return "", err
+	}
+
+	names, err := net.LookupAddr(ip)
+	if err != nil || len(names) == 0 {
+		slog.Debug("Failed to get client hostname", "error", err)
+		return ip, nil // fallback to IP if no hostname found
+	}
+
+	// names may contain trailing dot
+	return strings.TrimSuffix(names[0], "."), nil
 }
 
 func ParseRangeHeader(header string, size int64) (start, end int64, err error) {

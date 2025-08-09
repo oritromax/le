@@ -9,7 +9,7 @@ import (
 func TestServer_Start(t *testing.T) {
 	dir := "../pkg/utils" // Use utils dir for test files
 	port := 8081
-	s := NewServer(dir, port)
+	s := NewServer(dir, port, nil)
 
 	// Create a test server using the handler
 	fs := http.FileServer(http.Dir(s.Dir))
@@ -28,7 +28,7 @@ func TestServer_Start(t *testing.T) {
 func TestServer_PartialDownload(t *testing.T) {
 	dir := "../pkg/utils" // Use utils dir for test files
 	port := 8082
-	s := NewServer(dir, port)
+	s := NewServer(dir, port, nil)
 
 	// Create a test server using the handler
 	fs := http.FileServer(http.Dir(s.Dir))

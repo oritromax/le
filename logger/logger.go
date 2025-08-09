@@ -5,10 +5,8 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/lmittmann/tint"
 	"go.sakib.dev/le/pkg/utils"
 )
-
 
 const (
 	StatusCodeKey string = "statusCode"
@@ -19,13 +17,15 @@ type Handler struct {
 }
 
 func NewHandler() *Handler {
+	f, err := os.OpenFile(".log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0644)
+	if err != nil {
+		panic("failed to open log file: " + err.Error())
+	}
+	f.Write([]byte("\n\n"))
 	return &Handler{
-		Handler: tint.NewHandler(
-			os.Stdout,
-			&tint.Options{
-				Level: slog.LevelInfo,
-			},
-		),
+		Handler: slog.NewTextHandler(f, &slog.HandlerOptions{
+			Level: slog.LevelDebug,
+		}),
 	}
 }
 

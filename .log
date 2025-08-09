@@ -1,0 +1,229 @@
+time=2025-08-07T22:32:17.965+06:00 level=INFO msg="Serving files from" directory=/Users/sakib/Movies
+time=2025-08-07T22:32:17.966+06:00 level=INFO msg="File server is running on" url=http://192.168.0.118:8080
+time=2025-08-07T22:33:27.576+06:00 level=INFO msg="Serving files from" directory=/Users/sakib/Movies
+time=2025-08-07T22:33:27.576+06:00 level=INFO msg="File server is running on" url=http://192.168.0.118:8080
+time=2025-08-07T23:03:14.166+06:00 level=INFO msg=REQUEST clientIP=192.168.0.219 method=GET path=/Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=ykx9K
+time=2025-08-07T23:03:14.168+06:00 level=INFO msg=PARTIAL path=/Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv start=71803428 end=71803428 total=1 statusCode=206 reqId=ykx9K
+time=2025-08-07T23:03:14.169+06:00 level=INFO msg="TRANSFER COMPLETE" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv totalSent_mb=0 duration=1.942667ms reqId=ykx9K
+time=2025-08-07T23:03:14.229+06:00 level=INFO msg=REQUEST clientIP=192.168.0.219 method=GET path=/Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:14.229+06:00 level=INFO msg=PARTIAL path=/Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv start=626208345 end=1878625034 total=1252416690 statusCode=206 reqId=Cl5A5
+time=2025-08-07T23:03:14.232+06:00 level=INFO msg=REQUEST clientIP=192.168.0.219 method=GET path=/Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:14.233+06:00 level=INFO msg=PARTIAL path=/Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv start=1252416690 end=1878625034 total=626208345 statusCode=206 reqId=A1ARY
+time=2025-08-07T23:03:14.714+06:00 level=INFO msg=REQUEST clientIP=192.168.0.219 method=GET path=/Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:14.714+06:00 level=INFO msg=PARTIAL path=/Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv start=71803428 end=1878625034 total=1806821607 statusCode=206 reqId=0YATu
+time=2025-08-07T23:03:14.905+06:00 level=INFO msg="   6.00 / 1194.40 MB sent | 0.33% |  8.92 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:15.472+06:00 level=INFO msg="   8.00 / 1194.40 MB sent | 0.45% |  3.53 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:15.542+06:00 level=INFO msg="   2.00 /  597.20 MB sent | 0.11% |  1.53 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:15.842+06:00 level=INFO msg="   1.00 / 1723.12 MB sent | 0.06% |  0.89 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:16.114+06:00 level=INFO msg="  12.00 / 1194.40 MB sent | 0.67% |  6.23 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:16.691+06:00 level=INFO msg="   5.00 / 1723.12 MB sent | 0.28% |  4.71 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:17.165+06:00 level=INFO msg="   3.00 /  597.20 MB sent | 0.17% |  0.62 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:17.298+06:00 level=INFO msg="   8.00 / 1723.12 MB sent | 0.45% |  4.94 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:17.672+06:00 level=INFO msg="  15.00 / 1194.40 MB sent | 0.84% |  1.93 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:18.107+06:00 level=INFO msg="  11.00 / 1723.12 MB sent | 0.61% |  3.71 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:18.280+06:00 level=INFO msg="  17.00 / 1194.40 MB sent | 0.95% |  3.29 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:18.732+06:00 level=INFO msg="  14.00 / 1723.12 MB sent | 0.78% |  4.80 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:19.085+06:00 level=INFO msg="   4.00 /  597.20 MB sent | 0.22% |  0.52 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:19.134+06:00 level=INFO msg="  19.00 / 1194.40 MB sent | 1.06% |  2.34 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:19.564+06:00 level=INFO msg="  16.00 / 1723.12 MB sent | 0.89% |  2.40 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:19.864+06:00 level=INFO msg="  21.00 / 1194.40 MB sent | 1.17% |  2.74 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:20.255+06:00 level=INFO msg="  19.00 / 1723.12 MB sent | 1.06% |  4.35 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:20.388+06:00 level=INFO msg="  22.00 / 1194.40 MB sent | 1.23% |  1.91 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:20.922+06:00 level=INFO msg="  22.00 / 1723.12 MB sent | 1.23% |  4.50 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:21.308+06:00 level=INFO msg="  24.00 / 1194.40 MB sent | 1.34% |  2.17 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:21.454+06:00 level=INFO msg="  24.00 / 1723.12 MB sent | 1.34% |  3.76 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:21.563+06:00 level=INFO msg="   5.00 /  597.20 MB sent | 0.28% |  0.40 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:21.987+06:00 level=INFO msg="  26.00 / 1723.12 MB sent | 1.45% |  3.76 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:22.045+06:00 level=INFO msg="  26.00 / 1194.40 MB sent | 1.45% |  2.72 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:22.407+06:00 level=INFO msg="   6.00 /  597.20 MB sent | 0.33% |  1.19 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:22.669+06:00 level=INFO msg="  28.00 / 1723.12 MB sent | 1.56% |  2.93 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:22.752+06:00 level=INFO msg="  28.00 / 1194.40 MB sent | 1.56% |  2.83 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:22.944+06:00 level=INFO msg="   7.00 /  597.20 MB sent | 0.39% |  1.86 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:23.403+06:00 level=INFO msg="  30.00 / 1194.40 MB sent | 1.67% |  3.07 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:23.466+06:00 level=INFO msg="  30.00 / 1723.12 MB sent | 1.67% |  2.51 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:23.559+06:00 level=INFO msg="   8.00 /  597.20 MB sent | 0.45% |  1.63 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:23.990+06:00 level=INFO msg="  32.00 / 1194.40 MB sent | 1.79% |  3.41 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:24.170+06:00 level=INFO msg="  31.00 / 1723.12 MB sent | 1.73% |  1.42 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:24.640+06:00 level=INFO msg="   9.00 /  597.20 MB sent | 0.50% |  0.93 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:24.709+06:00 level=INFO msg="  34.00 / 1194.40 MB sent | 1.90% |  2.78 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:25.207+06:00 level=INFO msg="  10.00 /  597.20 MB sent | 0.56% |  1.76 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:25.229+06:00 level=INFO msg="  36.00 / 1194.40 MB sent | 2.01% |  3.84 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:25.625+06:00 level=INFO msg="  32.00 / 1723.12 MB sent | 1.79% |  0.69 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:26.086+06:00 level=INFO msg="  38.00 / 1194.40 MB sent | 2.12% |  2.33 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:26.137+06:00 level=INFO msg="  12.00 /  597.20 MB sent | 0.67% |  2.15 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:26.262+06:00 level=INFO msg="  33.00 / 1723.12 MB sent | 1.84% |  1.57 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:26.798+06:00 level=INFO msg="  40.00 / 1194.40 MB sent | 2.23% |  2.81 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:26.869+06:00 level=INFO msg="  14.00 /  597.20 MB sent | 0.78% |  2.73 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:27.027+06:00 level=INFO msg="  34.00 / 1723.12 MB sent | 1.90% |  1.31 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:27.503+06:00 level=INFO msg="  42.00 / 1194.40 MB sent | 2.34% |  2.84 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:27.561+06:00 level=INFO msg="  16.00 /  597.20 MB sent | 0.89% |  2.89 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:27.835+06:00 level=INFO msg="  35.00 / 1723.12 MB sent | 1.95% |  1.24 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:28.129+06:00 level=INFO msg="  44.00 / 1194.40 MB sent | 2.46% |  3.20 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:28.167+06:00 level=INFO msg="  18.00 /  597.20 MB sent | 1.00% |  3.30 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:28.520+06:00 level=INFO msg="  36.00 / 1723.12 MB sent | 2.01% |  1.46 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:28.889+06:00 level=INFO msg="  20.00 /  597.20 MB sent | 1.12% |  2.77 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:28.993+06:00 level=INFO msg="  46.00 / 1194.40 MB sent | 2.57% |  2.32 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:29.239+06:00 level=INFO msg="  37.00 / 1723.12 MB sent | 2.07% |  1.39 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:29.424+06:00 level=INFO msg="  22.00 /  597.20 MB sent | 1.23% |  3.73 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:29.784+06:00 level=INFO msg="  48.00 / 1194.40 MB sent | 2.68% |  2.53 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:30.151+06:00 level=INFO msg="  24.00 /  597.20 MB sent | 1.34% |  2.75 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:30.285+06:00 level=INFO msg="  38.00 / 1723.12 MB sent | 2.12% |  0.96 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:30.539+06:00 level=INFO msg="  50.00 / 1194.40 MB sent | 2.79% |  2.65 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:30.778+06:00 level=INFO msg="  26.00 /  597.20 MB sent | 1.45% |  3.19 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:31.294+06:00 level=INFO msg="  52.00 / 1194.40 MB sent | 2.90% |  2.65 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:31.447+06:00 level=INFO msg="  28.00 /  597.20 MB sent | 1.56% |  2.99 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:31.870+06:00 level=INFO msg="  40.00 / 1723.12 MB sent | 2.23% |  1.26 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:32.081+06:00 level=INFO msg="  54.00 / 1194.40 MB sent | 3.01% |  2.54 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:32.223+06:00 level=INFO msg="  30.00 /  597.20 MB sent | 1.67% |  2.58 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:32.622+06:00 level=INFO msg="  55.00 / 1194.40 MB sent | 3.07% |  1.85 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:32.866+06:00 level=INFO msg="  31.00 /  597.20 MB sent | 1.73% |  1.56 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:32.875+06:00 level=INFO msg="  42.00 / 1723.12 MB sent | 2.34% |  1.99 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:33.365+06:00 level=INFO msg="  57.00 / 1194.40 MB sent | 3.18% |  2.69 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:33.406+06:00 level=INFO msg="  32.00 /  597.20 MB sent | 1.79% |  1.85 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:33.449+06:00 level=INFO msg="  43.00 / 1723.12 MB sent | 2.40% |  1.74 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:33.981+06:00 level=INFO msg="  44.00 / 1723.12 MB sent | 2.46% |  1.88 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:34.171+06:00 level=INFO msg="  59.00 / 1194.40 MB sent | 3.29% |  2.48 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:34.226+06:00 level=INFO msg="  34.00 /  597.20 MB sent | 1.90% |  2.44 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:34.757+06:00 level=INFO msg="  46.00 / 1723.12 MB sent | 2.57% |  2.58 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:34.949+06:00 level=INFO msg="  61.00 / 1194.40 MB sent | 3.40% |  2.57 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:35.308+06:00 level=INFO msg="  36.00 /  597.20 MB sent | 2.01% |  1.85 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:35.851+06:00 level=INFO msg="  37.00 /  597.20 MB sent | 2.07% |  1.84 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:35.882+06:00 level=INFO msg="  48.00 / 1723.12 MB sent | 2.68% |  1.78 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:36.532+06:00 level=INFO msg="  39.00 /  597.20 MB sent | 2.18% |  2.94 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:36.725+06:00 level=INFO msg="  50.00 / 1723.12 MB sent | 2.79% |  2.37 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:37.081+06:00 level=INFO msg="  41.00 /  597.20 MB sent | 2.29% |  3.64 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:37.722+06:00 level=INFO msg="  52.00 / 1723.12 MB sent | 2.90% |  2.01 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:37.722+06:00 level=INFO msg="  43.00 /  597.20 MB sent | 2.40% |  3.12 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:37.997+06:00 level=INFO msg="  63.00 / 1194.40 MB sent | 3.52% |  0.66 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:38.386+06:00 level=INFO msg="  45.00 /  597.20 MB sent | 2.51% |  3.01 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:38.471+06:00 level=INFO msg="  54.00 / 1723.12 MB sent | 3.01% |  2.67 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:38.951+06:00 level=INFO msg="  64.00 / 1194.40 MB sent | 3.57% |  1.05 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:39.181+06:00 level=INFO msg="  55.00 / 1723.12 MB sent | 3.07% |  1.41 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:39.362+06:00 level=INFO msg="  47.00 /  597.20 MB sent | 2.62% |  2.05 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:40.114+06:00 level=INFO msg="  57.00 / 1723.12 MB sent | 3.18% |  2.14 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:40.173+06:00 level=INFO msg="  66.00 / 1194.40 MB sent | 3.68% |  1.64 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:40.299+06:00 level=INFO msg="  49.00 /  597.20 MB sent | 2.73% |  2.13 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:40.838+06:00 level=INFO msg="  50.00 /  597.20 MB sent | 2.79% |  1.85 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:40.947+06:00 level=INFO msg="  67.00 / 1194.40 MB sent | 3.74% |  1.29 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:41.050+06:00 level=INFO msg="  59.00 / 1723.12 MB sent | 3.29% |  2.14 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:41.719+06:00 level=INFO msg="  68.00 / 1194.40 MB sent | 3.80% |  1.30 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:41.762+06:00 level=INFO msg="  60.00 / 1723.12 MB sent | 3.35% |  1.40 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:41.763+06:00 level=INFO msg="  52.00 /  597.20 MB sent | 2.90% |  2.16 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:42.351+06:00 level=INFO msg="  69.00 / 1194.40 MB sent | 3.85% |  1.58 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:42.527+06:00 level=INFO msg="  54.00 /  597.20 MB sent | 3.01% |  2.62 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:42.747+06:00 level=INFO msg="  62.00 / 1723.12 MB sent | 3.46% |  2.03 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:42.956+06:00 level=INFO msg="  70.00 / 1194.40 MB sent | 3.91% |  1.65 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:43.478+06:00 level=INFO msg="  56.00 /  597.20 MB sent | 3.13% |  2.10 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:43.619+06:00 level=INFO msg="  71.00 / 1194.40 MB sent | 3.96% |  1.51 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:43.619+06:00 level=INFO msg="  64.00 / 1723.12 MB sent | 3.57% |  2.29 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:44.249+06:00 level=INFO msg="  72.00 / 1194.40 MB sent | 4.02% |  1.59 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:44.374+06:00 level=INFO msg="  58.00 /  597.20 MB sent | 3.24% |  2.23 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:44.791+06:00 level=INFO msg="  73.00 / 1194.40 MB sent | 4.07% |  1.84 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:45.001+06:00 level=INFO msg="  66.00 / 1723.12 MB sent | 3.68% |  1.45 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:45.141+06:00 level=INFO msg="  60.00 /  597.20 MB sent | 3.35% |  2.61 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:45.301+06:00 level=INFO msg="  74.00 / 1194.40 MB sent | 4.13% |  1.96 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:45.762+06:00 level=INFO msg="  67.00 / 1723.12 MB sent | 3.74% |  1.31 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:45.808+06:00 level=INFO msg="  75.00 / 1194.40 MB sent | 4.19% |  1.97 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:45.866+06:00 level=INFO msg="  62.00 /  597.20 MB sent | 3.46% |  2.76 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:46.454+06:00 level=INFO msg="  76.00 / 1194.40 MB sent | 4.24% |  1.55 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:46.658+06:00 level=INFO msg="  64.00 /  597.20 MB sent | 3.57% |  2.52 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:46.788+06:00 level=INFO msg="  69.00 / 1723.12 MB sent | 3.85% |  1.95 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:47.172+06:00 level=INFO msg="  65.00 /  597.20 MB sent | 3.63% |  1.95 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:47.386+06:00 level=INFO msg="  77.00 / 1194.40 MB sent | 4.30% |  1.07 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:47.407+06:00 level=INFO msg="  70.00 / 1723.12 MB sent | 3.91% |  1.62 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:47.917+06:00 level=INFO msg="  71.00 / 1723.12 MB sent | 3.96% |  1.96 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:47.956+06:00 level=INFO msg="  78.00 / 1194.40 MB sent | 4.35% |  1.75 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:48.037+06:00 level=INFO msg="  68.00 /  597.20 MB sent | 3.80% |  3.47 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:48.531+06:00 level=INFO msg="  73.00 / 1723.12 MB sent | 4.07% |  3.26 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:48.648+06:00 level=INFO msg="  70.00 /  597.20 MB sent | 3.91% |  3.27 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:48.794+06:00 level=INFO msg="  80.00 / 1194.40 MB sent | 4.47% |  2.39 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:49.287+06:00 level=INFO msg="  75.00 / 1723.12 MB sent | 4.19% |  2.64 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:49.333+06:00 level=INFO msg="  81.00 / 1194.40 MB sent | 4.52% |  1.86 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:49.356+06:00 level=INFO msg="  72.00 /  597.20 MB sent | 4.02% |  2.83 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:50.145+06:00 level=INFO msg="  75.00 /  597.20 MB sent | 4.19% |  3.80 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:50.161+06:00 level=INFO msg="  77.00 / 1723.12 MB sent | 4.30% |  2.29 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:50.262+06:00 level=INFO msg="  83.00 / 1194.40 MB sent | 4.63% |  2.15 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:50.757+06:00 level=INFO msg="  77.00 /  597.20 MB sent | 4.30% |  3.27 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:51.045+06:00 level=INFO msg="  85.00 / 1194.40 MB sent | 4.74% |  2.55 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:51.088+06:00 level=INFO msg="  79.00 / 1723.12 MB sent | 4.41% |  2.16 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:51.262+06:00 level=INFO msg="  79.00 /  597.20 MB sent | 4.41% |  3.96 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:51.623+06:00 level=INFO msg="  80.00 / 1723.12 MB sent | 4.47% |  1.87 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:51.861+06:00 level=INFO msg="  87.00 / 1194.40 MB sent | 4.86% |  2.45 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:51.986+06:00 level=INFO msg="  81.00 /  597.20 MB sent | 4.52% |  2.77 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:52.327+06:00 level=INFO msg="  82.00 / 1723.12 MB sent | 4.58% |  2.84 MB/s" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:52.570+06:00 level=ERROR msg="Error writing response" error="write tcp 192.168.0.118:8080->192.168.0.219:39760: write: broken pipe" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=A1ARY
+time=2025-08-07T23:03:52.570+06:00 level=INFO msg="TRANSFER COMPLETE" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv totalSent_mb=81 duration=38.337046834s reqId=A1ARY
+time=2025-08-07T23:03:52.570+06:00 level=ERROR msg="Error writing response" error="write tcp 192.168.0.118:8080->192.168.0.219:39758: write: broken pipe" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=Cl5A5
+time=2025-08-07T23:03:52.570+06:00 level=INFO msg="TRANSFER COMPLETE" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv totalSent_mb=87 duration=38.341260084s reqId=Cl5A5
+time=2025-08-07T23:03:52.587+06:00 level=ERROR msg="Error writing response" error="write tcp 192.168.0.118:8080->192.168.0.219:39776: write: broken pipe" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv reqId=0YATu
+time=2025-08-07T23:03:52.588+06:00 level=INFO msg="TRANSFER COMPLETE" file=Eden.2024.iNTERNAL.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv totalSent_mb=82 duration=37.874045708s reqId=0YATu
+time=2025-08-07T23:55:42.559+06:00 level=INFO msg="Serving files from" directory=/Users/sakib/Movies
+time=2025-08-07T23:55:42.560+06:00 level=INFO msg="File server is running on" url=http://192.168.0.118:8080
+time=2025-08-07T23:55:42.560+06:00 level=INFO msg="Failed to start srvr: error starting server: listen tcp :8080: bind: address already in use"
+time=2025-08-07T23:55:58.464+06:00 level=INFO msg="Serving files from" directory=/Users/sakib/Movies
+time=2025-08-07T23:55:58.464+06:00 level=INFO msg="File server is running on" url=http://192.168.0.118:8080
+time=2025-08-07T23:56:05.768+06:00 level=INFO msg=REQUEST clientIP=192.168.0.219 method=GET path=/ reqId=McHXf
+time=2025-08-07T23:56:05.768+06:00 level=INFO msg="OK - Serving directory with pretty UI" path=/ reqId=McHXf
+time=2025-08-07T23:56:13.323+06:00 level=INFO msg=REQUEST clientIP=192.168.0.219 method=GET path=/28.Years.Later.2025.1080p.MA.WEB-DL.DDP5.1.Atmos.H.264-BYNDR.mkv reqId=UigXK
+time=2025-08-07T23:56:13.324+06:00 level=INFO msg=OK path=/28.Years.Later.2025.1080p.MA.WEB-DL.DDP5.1.Atmos.H.264-BYNDR.mkv size=7327220864 statusCode=200 reqId=UigXK
+time=2025-08-07T23:56:13.458+06:00 level=INFO msg=REQUEST clientIP=192.168.0.219 method=GET path=/28.Years.Later.2025.1080p.MA.WEB-DL.DDP5.1.Atmos.H.264-BYNDR.mkv reqId=SNOXt
+time=2025-08-07T23:56:13.459+06:00 level=INFO msg=PARTIAL path=/28.Years.Later.2025.1080p.MA.WEB-DL.DDP5.1.Atmos.H.264-BYNDR.mkv start=2442406954 end=7327220863 total=4884813910 statusCode=206 reqId=SNOXt
+time=2025-08-07T23:56:13.481+06:00 level=INFO msg=REQUEST clientIP=192.168.0.219 method=GET path=/28.Years.Later.2025.1080p.MA.WEB-DL.DDP5.1.Atmos.H.264-BYNDR.mkv reqId=KnJcD
+time=2025-08-07T23:56:13.482+06:00 level=INFO msg=PARTIAL path=/28.Years.Later.2025.1080p.MA.WEB-DL.DDP5.1.Atmos.H.264-BYNDR.mkv start=4884813908 end=7327220863 total=2442406956 statusCode=206 reqId=KnJcD
+time=2025-08-07T23:56:13.881+06:00 level=INFO msg="   6.00 / 6987.78 MB sent | 0.09% | 10.78 MB/s" file=28.Years.Later.2025.1080p.MA.WEB-DL.DDP5.1.Atmos.H.264-BYNDR.mkv reqId=UigXK
+time=2025-08-07T23:56:13.977+06:00 level=INFO msg="   2.00 / 4658.52 MB sent | 0.03% |  3.86 MB/s" file=28.Years.Later.2025.1080p.MA.WEB-DL.DDP5.1.Atmos.H.264-BYNDR.mkv reqId=SNOXt
+time=2025-08-07T23:56:14.250+06:00 level=INFO msg="   2.00 / 2329.26 MB sent | 0.03% |  2.60 MB/s" file=28.Years.Later.2025.1080p.MA.WEB-DL.DDP5.1.Atmos.H.264-BYNDR.mkv reqId=KnJcD
+time=2025-08-07T23:56:14.610+06:00 level=INFO msg="  11.00 / 6987.78 MB sent | 0.16% |  6.85 MB/s" file=28.Years.Later.2025.1080p.MA.WEB-DL.DDP5.1.Atmos.H.264-BYNDR.mkv reqId=UigXK
+time=2025-08-07T23:56:14.796+06:00 level=INFO msg="   4.00 / 2329.26 MB sent | 0.06% |  3.67 MB/s" file=28.Years.Later.2025.1080p.MA.WEB-DL.DDP5.1.Atmos.H.264-BYNDR.mkv reqId=KnJcD
+time=2025-08-07T23:56:14.941+06:00 level=INFO msg="   6.00 / 4658.52 MB sent | 0.09% |  4.15 MB/s" file=28.Years.Later.2025.1080p.MA.WEB-DL.DDP5.1.Atmos.H.264-BYNDR.mkv reqId=SNOXt
+time=2025-08-07T23:56:15.168+06:00 level=INFO msg="  15.00 / 6987.78 MB sent | 0.21% |  7.18 MB/s" file=28.Years.Later.2025.1080p.MA.WEB-DL.DDP5.1.Atmos.H.264-BYNDR.mkv reqId=UigXK
+time=2025-08-07T23:56:15.388+06:00 level=INFO msg="   7.00 / 2329.26 MB sent | 0.10% |  5.07 MB/s" file=28.Years.Later.2025.1080p.MA.WEB-DL.DDP5.1.Atmos.H.264-BYNDR.mkv reqId=KnJcD
+time=2025-08-07T23:56:15.504+06:00 level=INFO msg="  10.00 / 4658.52 MB sent | 0.14% |  7.10 MB/s" file=28.Years.Later.2025.1080p.MA.WEB-DL.DDP5.1.Atmos.H.264-BYNDR.mkv reqId=SNOXt
+time=2025-08-07T23:56:15.916+06:00 level=INFO msg="  19.00 / 6987.78 MB sent | 0.27% |  5.35 MB/s" file=28.Years.Later.2025.1080p.MA.WEB-DL.DDP5.1.Atmos.H.264-BYNDR.mkv reqId=UigXK
+time=2025-08-07T23:56:15.972+06:00 level=INFO msg="  11.00 / 2329.26 MB sent | 0.16% |  6.85 MB/s" file=28.Years.Later.2025.1080p.MA.WEB-DL.DDP5.1.Atmos.H.264-BYNDR.mkv reqId=KnJcD
+time=2025-08-07T23:56:16.046+06:00 level=INFO msg="  13.00 / 4658.52 MB sent | 0.19% |  5.54 MB/s" file=28.Years.Later.2025.1080p.MA.WEB-DL.DDP5.1.Atmos.H.264-BYNDR.mkv reqId=SNOXt
+time=2025-08-09T11:53:44.092+06:00 level=INFO msg="Serving files from" directory=/Users/sakib/Movies
+time=2025-08-09T11:53:44.093+06:00 level=INFO msg="File server is running on" url=http://192.168.0.118:8080
+time=2025-08-09T11:53:50.723+06:00 level=INFO msg=REQUEST clientIP=192.168.0.219 clientHost=192.168.0.219 method=GET path=/ reqId=0VjWQ
+time=2025-08-09T11:53:50.723+06:00 level=INFO msg="OK - Serving directory with pretty UI" path=/ reqId=0VjWQ
+time=2025-08-09T11:53:50.811+06:00 level=INFO msg=REQUEST clientIP=192.168.0.219 clientHost=192.168.0.219 method=GET path=/favicon.ico reqId=NCrbu
+time=2025-08-09T11:53:50.811+06:00 level=ERROR msg="" statusCode=404 error="stat /Users/sakib/Movies/favicon.ico: no such file or directory" reqId=NCrbu
+time=2025-08-09T11:59:46.725+06:00 level=INFO msg="Serving files from" directory=/Users/sakib/Movies
+time=2025-08-09T11:59:46.726+06:00 level=INFO msg="File server is running on" url=http://192.168.0.118:8080
+time=2025-08-09T12:00:22.221+06:00 level=WARN msg="Failed to get client hostname" error="lookup 192.168.0.219: no such host"
+time=2025-08-09T12:00:22.222+06:00 level=INFO msg=REQUEST clientIP=192.168.0.219 clientHost=192.168.0.219 method=GET path=/ reqId=aTEGd
+time=2025-08-09T12:00:22.222+06:00 level=INFO msg="OK - Serving directory with pretty UI" path=/ reqId=aTEGd
+time=2025-08-09T12:01:12.788+06:00 level=INFO msg="Serving files from" directory=/Users/sakib/Movies
+time=2025-08-09T12:01:12.789+06:00 level=INFO msg="File server is running on" url=http://192.168.0.118:8080
+time=2025-08-09T12:02:11.965+06:00 level=INFO msg=REQUEST clientIP=::1 clientHost=localhost method=GET path=/ reqId=0pasL
+time=2025-08-09T12:02:11.965+06:00 level=INFO msg="OK - Serving directory default file server" path=/ reqId=0pasL
+time=2025-08-09T12:02:27.549+06:00 level=INFO msg=REQUEST clientIP=::1 clientHost=localhost method=GET path=/ reqId=cDG1u
+time=2025-08-09T12:02:27.549+06:00 level=INFO msg="OK - Serving directory with pretty UI" path=/ reqId=cDG1u
+time=2025-08-09T12:02:28.399+06:00 level=INFO msg=REQUEST clientIP=::1 clientHost=localhost method=GET path=/favicon.ico reqId=jL2na
+time=2025-08-09T12:02:28.400+06:00 level=ERROR msg="" statusCode=404 error="stat /Users/sakib/Movies/favicon.ico: no such file or directory" reqId=jL2na
+
+
+time=2025-08-09T12:06:01.926+06:00 level=INFO msg="Serving files from" directory=/Users/sakib/Movies
+time=2025-08-09T12:06:01.926+06:00 level=INFO msg="File server is running on" url=http://192.168.0.118:8080
+time=2025-08-09T12:06:12.657+06:00 level=DEBUG msg="Getting client IP" remoteAddr=192.168.0.219:43768
+time=2025-08-09T12:06:12.657+06:00 level=DEBUG msg="Getting client IP" remoteAddr=192.168.0.219:43768
+time=2025-08-09T12:06:12.707+06:00 level=DEBUG msg="Failed to get client hostname" error="lookup 192.168.0.219: no such host"
+time=2025-08-09T12:06:12.707+06:00 level=INFO msg=REQUEST clientIP=192.168.0.219 clientHost=192.168.0.219 method=GET path=/ reqId=AuviF
+time=2025-08-09T12:06:12.707+06:00 level=INFO msg="OK - Serving directory with pretty UI" path=/ reqId=AuviF
+time=2025-08-09T12:06:25.805+06:00 level=DEBUG msg="Getting client IP" remoteAddr=[::1]:63988
+time=2025-08-09T12:06:25.805+06:00 level=DEBUG msg="Getting client IP" remoteAddr=[::1]:63988
+time=2025-08-09T12:06:25.811+06:00 level=INFO msg=REQUEST clientIP=::1 clientHost=localhost method=GET path=/ reqId=nM6Qf
+time=2025-08-09T12:06:25.812+06:00 level=INFO msg="OK - Serving directory with pretty UI" path=/ reqId=nM6Qf
+
+
+time=2025-08-09T12:13:15.038+06:00 level=INFO msg="Serving files from" directory=/Users/sakib/Movies
+time=2025-08-09T12:13:15.038+06:00 level=INFO msg="File server is running on" url=http://192.168.0.118:8080
+time=2025-08-09T12:13:35.505+06:00 level=DEBUG msg="Getting client IP" remoteAddr=192.168.0.219:57796
+time=2025-08-09T12:13:35.505+06:00 level=DEBUG msg="Getting client IP" remoteAddr=192.168.0.219:57796
+time=2025-08-09T12:13:35.578+06:00 level=DEBUG msg="Failed to get client hostname" error="lookup 192.168.0.219: no such host"
+time=2025-08-09T12:13:35.578+06:00 level=INFO msg=REQUEST clientIP=192.168.0.219 clientHost=192.168.0.219 userAgent="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36" method=GET path=/ reqId=ONWwE
+time=2025-08-09T12:13:35.578+06:00 level=INFO msg="OK - Serving directory with pretty UI" path=/ reqId=ONWwE
+
+
+time=2025-08-09T12:25:28.990+06:00 level=INFO msg="Serving files from" directory=/Users/sakib/Movies
+time=2025-08-09T12:25:28.990+06:00 level=INFO msg="File server is running on" url=http://192.168.0.118:8080
